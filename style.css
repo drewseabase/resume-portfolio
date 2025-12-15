@@ -1,0 +1,151 @@
+:root{
+    --bg: #0b0d12;
+    --card: rgba(255,255,255,0.06);
+    --text: rgba(255,255,255,0.92);
+    --muted: rgba(255,255,255,0.70);
+    --border: rgba(255,255,255,0.14);
+    --shadow: 0 14px 40px rgba(0,0,0,0.35);
+    --radius: 18px;
+    --max: 980px;
+    --pad: 22px;
+    --gap: 16px;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
+*{box-sizing:border-box;}
+
+body{
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--text);
+    line-height: 1.45;
+    background:
+        radial-gradient(900px 600px at 12% 10%, rgba(255,255,255,0.10), transparent 55%),
+        radial-gradient(900px 600px at 88% 18%, rgba(255,255,255,0.08), transparent 50%),
+        radial-gradient(900px 700px at 50% 90%, rgba(255,255,255,0.06), transparent 60%),
+    var(--bg);
+    padding: 28px 18px 54px;
+}
+.page{
+    max-width: var(--max);
+    margin: 0 auto;
+    display: grid;
+    gap: var(--gap);
+    margin-bottom: 10px;
+}
+a{
+    color:var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    font-weight: 600;
+}
+.site-header{
+    border-radius: calc(var(--radius) + 4px);
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.06));
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+.nav-wrapper{
+    padding: 16px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+.brand{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 650;
+    color: white;
+}
+.logo-dot{
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.75);
+}
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-decoration: none;
+}
+nav a {
+    padding: 8px 10px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    color: var(--muted);
+}
+nav a:hover{
+    border-color: rgba(255,255,255,0.14);
+    color: var(--text);
+    background: rgba(255,255,255,0.08)
+}
+
+.top-bar{
+    border-radius: calc(var(--radius) + 4px);
+    border: 1px solid var(--border);
+    background: linear-gradient( var(--border),
+    rgba(255,255,255,0.10), rgba(255,255,255,0.06));
+    box-shadow: var(--shadow);
+    padding: 18px;
+    display: grid;
+    gap: 14px;
+}
+@media(min-width: 860px){
+    .top-bar{grid-template-columns: 1.4fr 0.6fr; align-items: start; margin-bottom: 10px;}
+}
+.name{ margin: 0; letter-spacing: 0.02em;}
+.headline{margin: 6px 0 0; color: var(--muted);}
+.contact p{margin: 0 0 3px; color: var(--muted);}
+.copy-row{display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 10px;}
+.mono{font-family: var(--mono); color: var(--text);}
+.copy-btn{
+    padding: 4px 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.08);
+    color: var(--text);
+    cursor: pointer;
+}
+.copy-btn:hover{background:rgba(255,255,255,0.12);}
+.card{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: var(--pad);
+    margin-bottom: 20px;
+}
+h2{
+    margin: 0 0 10px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: var(--muted);
+}
+h3{margin: 0 0 5px;}
+p{margin: 0 0 10px;}
+.item .headline{font-size: 1rem; margin:2px;}
+.muted{color: var(--muted);}
+.meta{
+    font-family: var(--mono);
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+.item{
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.10);
+}
+.item:first-of-type{border-top: none; padding-top: 0;}
+.item-head{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+}
+.header-container{margin: 0 0 8px;}
