@@ -93,7 +93,6 @@ nav a:hover{
     color: var(--text);
     background: rgba(255,255,255,0.08)
 }
-
 .top-bar{
     border-radius: calc(var(--radius) + 4px);
     border: 1px solid var(--border);
@@ -110,6 +109,7 @@ nav a:hover{
 .name{ margin: 0; letter-spacing: 0.02em;}
 .headline{margin: 6px 0 0; color: var(--muted);}
 .contact p{margin: 0 0 3px; color: var(--muted);}
+.content{display: grid; gap: var(--gap);}
 .copy-row{display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 10px;}
 .mono{font-family: var(--mono); color: var(--text);}
 .copy-btn{
@@ -158,3 +158,4 @@ p{margin: 0 0 10px;}
     gap: 8px;
 }
 .header-container{margin: 0 0 8px;}
+.footer{text-align: center; padding-top: 10px; color: var(--muted);}
