@@ -3,108 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
+    <title>Your Name - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    
+    <script src="homepage.js" defer></script>
 </head>
 <body>
-    <script src="homepage.js" defer></script>
-    <div class="page">
-        <header class="site-header">
-            <div class="nav-wrapper">
-                <div class="brand">
-                    <img src="Images/drew_headshot.jpg" alt="DrewSeabase">
-                    <span>Resume</span>
+    <nav>
+        <div class="container">
+            <div class="logo">Drew Seabase</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div>
+            <h1>Hi, My Name is Drew Seabase</h1>
+            <p>Web Developer | Designer | Creator</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I'm a passionate web developer with a love for creating beautiful, functional websites. With expertise in modern web technologies, I bring ideas to life through clean code and thoughtful design.</p>
+                <p style="margin-top: 1rem;">When I'm not coding, you can find me exploring new technologies, contributing to open source, or enjoying a good cup of coffee.</p>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 1rem;">Skills</h3>
+                <div class="skills">
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">UI/UX Design</span>
+                    <span class="skill-tag">Responsive Design</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">API Development</span>
                 </div>
-                <nav>
-                    <a href="index.html">Resume</a>
-                    <a href="portfolio.html">Portfolio</a>
-                </nav>
             </div>
-        </header>
-        <header class="top-bar">
-            <div class="identity">
-                <h1 class="name">Drew Seabase</h1>
-                <p class="headline"> Front-End Developer • Software Engineer</p>
-            </div>
-            <div class="contact">
-                <p><strong>Traverse City, MI</strong></p>
-                <div class="copy-row">
-                    <span class="mono">dseabase@gmail.com</span>
-                    <button class="copy-btn" data-copy="dseabase@gmail.com">Copy</button>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">🚀</div>
+                <div class="project-content">
+                    <h3>Project One</h3>
+                    <p>A description of your amazing project and the technologies used to build it.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Live Demo →</a>
+                        <a href="#" class="project-link">GitHub →</a>
+                    </div>
                 </div>
-                <p class="copy-status muted" aria-live="polite"></p>
-                <p>Phone: (989)464-1763</p>
-                <p>GitHub: github.com/drewseabase</p>
             </div>
-        </header>
-        <main id="main" class="content">
-            <section class="card">
-                <h2>Summary</h2>
-                <p>
-                    I am an entry-level front-end developer with experience building responsive, user-focused web interfaces
-                    using HTML, CSS, and JavaScript. My background in interactive media has given me a strong eye for layout,
-                    structure, and usability, while I continue to develop broader software engineering skills through
-                    Python and independent learning. My experience as a Division 1 student-athlete has shaped my work ethic,
-                    time management, and commitment to steady improvement.
-                </p>
-            </section>
-            <section class="card">
-                <h2>Projects</h2>
-                <article class="item">
-                    <div class="item-head">
-                        <div class="header-container">
-                            <sh3>Spartans Cross Country</h3>
-                            <p class="headline">Final Academic Project</p>
-                        </div>
-                        <span class="meta">HTML • CSS • JavaScript</span>
+
+            <div class="project-card">
+                <div class="project-image">💻</div>
+                <div class="project-content">
+                    <h3>Project Two</h3>
+                    <p>Another exciting project showcasing your skills and creativity.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Live Demo →</a>
+                        <a href="#" class="project-link">GitHub →</a>
                     </div>
-                    <p>
-                        My Final web development project involving design and implementation of a responsive cross-country team website using
-                        HTML, modern CSS layouts, and JavaScript. Focused on clean page structure, intuitive navigation, and effective presentation
-                        of team information and media, with an emphasis on usability, responsive design, and front-end fundamentals.
-                    </p>
-                    <p class="muted"> Links: https://spartancrosscountry.netlify.app/ • GitHub Repo: https://github.com/drewseabase/finalproject-MI349  </p>
-                </article>
-            </section>
-            <section class="card">   
-                <h2>Projects</h2>
-                <article class="item">
-                    <div class="item-head">
-                        <h3>Project Title</h3>
-                        <span class="meta">JavaScript • DOM</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">🎨</div>
+                <div class="project-content">
+                    <h3>Project Three</h3>
+                    <p>A creative solution to a real-world problem using modern web technologies.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Live Demo →</a>
+                        <a href="#" class="project-link">GitHub →</a>
                     </div>
-                    <p>
-                        Another short description. Keep this readable, not long.
-                    </p>
-                    <p class="muted">Links: Live Demo • GitHub Repo</p>
-                </article>
-            </section>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <section class="card">
-                    <h2>Experience</h2>
-                    <article class="item">
-                        <div class="item-head">
-                            <h3>Job Title — Company</h3>
-                            <span class="meta">City, State • Dates</span>
-                        </div>
-                        <p>
-                            One paragraph describing responsibilities and transferable skills.
-                        </p>
-                    </article>
-                </section>
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-content">
+            <p style="font-size: 1.1rem; color: #4a5568; margin-bottom: 2rem;">
+                I'm always open to new opportunities and collaborations. Feel free to reach out!
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    📧 Email: <a href="mailto:your.email@example.com">your.email@example.com</a>
+                </div>
+                <div class="contact-item">
+                    💼 LinkedIn: <a href="#">linkedin.com/in/yourprofile</a>
+                </div>
+                <div class="contact-item">
+                    🐙 GitHub: <a href="#">github.com/yourusername</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <section class="card">
-                    <h2>Education</h2>
-                    <p><strong>University Name</strong> — Degree Name</p>
-                    <p class="muted">Relevant coursework: Course A, Course B, Course C</p>
-                </section>
-
-                <footer class="footer">
-                    <p>Built with HTML + CSS (print-friendly). Minimal JS added.</p>
-                </footer>
-            </section>
-        </main>
-    </div> 
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
 </body>
 </html>
