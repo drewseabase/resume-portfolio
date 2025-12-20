@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "Images/parkerlambers.PNG",
     "Images/jaspercane.PNG",
     "Images/paddybyrnes.PNG",
-    "Images/evanloughridge.PNG",
+    "Images/evanloughride.PNG",
     "Images/bradymcardle.PNG",
     "Images/drewseabase.PNG",
     "Images/nathanlarson.PNG"
@@ -160,17 +160,17 @@ document.addEventListener("DOMContentLoaded", function () {
   rosterEl.src = rosterImages[0];
 
   function showNextRosterImage() {
-    rosterEl.classList.add("is-fading");
+    // Start fade out
+    rosterEl.classList.add("is_fading");
 
+    // After fade out completes, change image
     setTimeout(() => {
       currentIndex = (currentIndex + 1) % rosterImages.length;
       rosterEl.src = rosterImages[currentIndex];
-    }, 600); 
-
-    setTimeout(() => {
-      rosterEl.classList.remove("is-fading");
-    }, 600 + 1000); 
+      
+      // Remove fading class to fade back in
+      rosterEl.classList.remove("is_fading");
+    }, 600); // Match the CSS transition time
   }
-
-  setInterval(showNextRosterImage, 7000);
+  setInterval(showNextRosterImage, 5000); // Change every 5 seconds
 });
