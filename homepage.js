@@ -163,14 +163,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // Start fade out
     rosterEl.classList.add("is_fading");
 
-    // After fade out completes, change image
+    // Wait for fade out to complete, THEN change image
     setTimeout(() => {
       currentIndex = (currentIndex + 1) % rosterImages.length;
       rosterEl.src = rosterImages[currentIndex];
       
-      // Remove fading class to fade back in
-      rosterEl.classList.remove("is_fading");
-    }, 600); // Match the CSS transition time
+      // Small delay to ensure image loads before fading in
+      setTimeout(() => {
+        rosterEl.classList.remove("is_fading");
+      }, 50); // Small delay ensures smooth transition
+    }, 600); // Wait for full fade out
   }
-  setInterval(showNextRosterImage, 5000); // Change every 5 seconds
+
+  setInterval(showNextRosterImage, 5000);
 });
