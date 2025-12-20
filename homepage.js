@@ -104,7 +104,7 @@ window.addEventListener('scroll', () => {
     const hero = document.querySelector('.hero');
     if (hero) {
         hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        hero.style.opacity = 1 - (scrolled / 700);
+        hero.style.opacity = 1 - (scrolled / 500);
     }
 });
 
