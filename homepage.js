@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "Images/parkerlambers.PNG",
     "Images/jaspercane.PNG",
     "Images/paddybyrnes.PNG",
-    "Images/evanloughride.PNG",
+    "Images/evanloughridge.PNG",
     "Images/bradymcardle.PNG",
     "Images/drewseabase.PNG",
     "Images/nathanlarson.PNG"
