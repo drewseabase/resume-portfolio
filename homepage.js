@@ -148,21 +148,4 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentIndex = 0;
   rosterEl.src = rosterImages[0];
 
-  function showNextRosterImage() {
-    // Start fade out
-    rosterEl.classList.add("is_fading");
-
-    // Wait for fade out to complete, THEN change image
-    setTimeout(() => {
-      currentIndex = (currentIndex + 1) % rosterImages.length;
-      rosterEl.src = rosterImages[currentIndex];
-      
-      // Small delay to ensure image loads before fading in
-      setTimeout(() => {
-        rosterEl.classList.remove("is_fading");
-      }, 50); // Small delay ensures smooth transition
-    }, 600); // Wait for full fade out
-  }
-
-  setInterval(showNextRosterImage, 5000);
 });
