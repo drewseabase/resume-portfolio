@@ -139,18 +139,7 @@ if (heroTitle) {
 
 document.addEventListener("DOMContentLoaded", function () {
   const rosterImages = [
-    "Images/rileyhough.PNG",
-    "Images/thomaswestphal.PNG",
-    "Images/jackpennewell.PNG",
-    "Images/mosesosterink.PNG",
-    "Images/mikehegarty.PNG",
-    "Images/parkerlambers.PNG",
-    "Images/jaspercane.PNG",
-    "Images/paddybyrnes.PNG",
-    "Images/evanloughridge.PNG",
-    "Images/bradymcardle.PNG",
-    "Images/drewseabase.PNG",
-    "Images/nathanlarson.PNG"
+    "Images/drewseabase.PNG"
   ];
 
   const rosterEl = document.querySelector(".roster");
