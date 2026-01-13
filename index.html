@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drew Seabase Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="shell">
+      <div class="topbar">
+        <a class="brand" href="#top" aria-label="Home">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span class="brand-name">Drew Seabase</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+            <span class="nav-toggle-lines" aria-hidden="true"></span>
+            <span class="sr-only">Menu</span>
+          </button>
+          <ul id="nav-links" class="nav-links">
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#focus">Focus</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="shell">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">Front-end developer • HTML / CSS / JavaScript</p>
+            <h1 class="hero-title">
+              I build <span class="accent">clean, responsive</span> websites
+              with thoughtful UI and real usability.
+            </h1>
+            <p class="hero-sub">
+              I’m entry-level, but I treat my work like it’s shipping to real users:
+              clear layout, mobile-first structure, and interactive details that feel polished.
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn primary" href="#projects">View Projects</a>
+              <a class="btn ghost" href="#contact">Contact</a>
+            </div>
+
+            <div class="hero-meta">
+              <div class="meta-pill">
+                <span class="meta-label">Based in</span>
+                <span class="meta-value">Michigan</span>
+              </div>
+              <div class="meta-pill">
+                <span class="meta-label">Strength</span>
+                <span class="meta-value">Responsive UI + interaction</span>
+              </div>
+              <div class="meta-pill">
+                <span class="meta-label">Currently</span>
+                <span class="meta-value">Building client-ready sites</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero card (unique but minimal) -->
+          <div class="hero-card" role="region" aria-label="Highlights">
+            <div class="hero-card-inner">
+              <div class="stat">
+                <div class="stat-num" data-count="3">0</div>
+                <div class="stat-label">Projects shipped</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num" data-count="1">0</div>
+                <div class="stat-label">Content-heavy site built</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num" data-count="100">0</div>
+                <div class="stat-label">Mobile-first mindset</div>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="mini-list">
+                <h2 class="mini-title">What you’ll notice</h2>
+                <ul>
+                  <li>Layouts that stay stable across breakpoints</li>
+                  <li>Modals / sliders that don’t break on small screens</li>
+                  <li>Clean spacing, clear hierarchy, readable type</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-bottom">
+          <p class="hero-bottom-text">Scroll for selected work ↓</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Selected Projects</h2>
+            <p class="section-sub">
+              Short case studies — what I built, why it matters, and how it works.
+            </p>
+          </div>
+          <div class="filter">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="ui">UI</button>
+            <button class="chip" data-filter="js">JavaScript</button>
+            <button class="chip" data-filter="responsive">Responsive</button>
+          </div>
+        </div>
+
+        <div class="cards" id="projectGrid">
+          <!-- Project 1 -->
+          <article class="card" data-tags="ui js responsive">
+            <div class="card-top">
+              <div class="badge">Case Study</div>
+              <div class="card-actions">
+                <a class="icon-btn" href="#" aria-label="Open live demo (replace link)">Live</a>
+                <a class="icon-btn" href="#" aria-label="Open GitHub repo (replace link)">Code</a>
+              </div>
+            </div>
+
+            <h3 class="card-title">Spartan Cross Country Website</h3>
+            <p class="card-desc">
+              A content-heavy athletics site with interactive roster profiles, modals,
+              and a clean mobile layout that stays usable on small screens.
+            </p>
+
+            <div class="card-grid">
+              <div class="card-block">
+                <div class="card-label">Problem</div>
+                <div class="card-text">Lots of content + lots of breakpoints → easy to break the UI.</div>
+              </div>
+              <div class="card-block">
+                <div class="card-label">Build</div>
+                <div class="card-text">Responsive layout + modals + sliders + lightbox gallery.</div>
+              </div>
+              <div class="card-block">
+                <div class="card-label">Result</div>
+                <div class="card-text">Stable across devices, readable hierarchy, smooth interactions.</div>
+              </div>
+            </div>
+
+            <div class="stack">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS Grid/Flex</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Responsive</span>
+            </div>
+
+            <button class="card-expand" data-modal="modal-xc">View details</button>
+          </article>
+
+          <!-- Project 2 (use a real second project later; for now it’s a slot) -->
+          <article class="card muted" data-tags="ui responsive">
+            <div class="card-top">
+              <div class="badge">Next Build</div>
+              <div class="card-actions">
+                <span class="ghost-pill">In progress</span>
+              </div>
+            </div>
+
+            <h3 class="card-title">Small Business Redesign (Coming Next)</h3>
+            <p class="card-desc">
+              A simple, client-ready 3–5 page website focused on clarity, speed,
+              and making the business look more trustworthy.
+            </p>
+
+            <div class="card-grid">
+              <div class="card-block">
+                <div class="card-label">Goal</div>
+                <div class="card-text">Modern layout, better spacing, better CTA, better mobile.</div>
+              </div>
+              <div class="card-block">
+                <div class="card-label">Deliverable</div>
+                <div class="card-text">Home / About / Services / Contact + basic SEO structure.</div>
+              </div>
+              <div class="card-block">
+                <div class="card-label">Timeline</div>
+                <div class="card-text">A fast build that’s realistic for freelance work.</div>
+              </div>
+            </div>
+
+            <div class="stack">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Mobile-first</span>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="card" data-tags="js ui">
+            <div class="card-top">
+              <div class="badge">Feature</div>
+              <div class="card-actions">
+                <a class="icon-btn" href="#" aria-label="Open demo (replace link)">Live</a>
+                <a class="icon-btn" href="#" aria-label="Open repo (replace link)">Code</a>
+              </div>
+            </div>
+
+            <h3 class="card-title">Interactive UI Components</h3>
+            <p class="card-desc">
+              A collection of reusable UI patterns: modal, lightbox, slider,
+              and responsive card layouts designed to be dependable.
+            </p>
+
+            <div class="card-grid">
+              <div class="card-block">
+                <div class="card-label">Focus</div>
+                <div class="card-text">Keyboard support, click-outside close, escape to exit.</div>
+              </div>
+              <div class="card-block">
+                <div class="card-label">Details</div>
+                <div class="card-text">No layout shift, consistent spacing, responsive behavior.</div>
+              </div>
+              <div class="card-block">
+                <div class="card-label">Why</div>
+                <div class="card-text">These are the things that separate “works” from “polished.”</div>
+              </div>
+            </div>
+
+            <div class="stack">
+              <span class="tag">JavaScript</span>
+              <span class="tag">UI</span>
+              <span class="tag">Accessibility</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="shell">
+        <div class="two-col">
+          <div>
+            <h2 class="section-title">About</h2>
+            <p class="prose">
+              I’m an entry-level front-end developer focused on building clean, responsive,
+              user-first websites. I like work that rewards attention to detail:
+              spacing, hierarchy, interaction, and making sure things hold up on smaller screens.
+            </p>
+            <p class="prose">
+              My best work is when I take something content-heavy and make it feel organized,
+              modern, and easy to use — without overcomplicating the tech.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h3 class="panel-title">What I’m strong at (no fluff)</h3>
+            <ul class="panel-list">
+              <li><span>Responsive layout</span><span>Grid/Flex, breakpoints, mobile-first</span></li>
+              <li><span>UI structure</span><span>clean spacing, consistent components</span></li>
+              <li><span>JavaScript interaction</span><span>modals, sliders, lightboxes</span></li>
+              <li><span>Debugging</span><span>fixing edge cases + weird responsive issues</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOCUS -->
+    <section class="section" id="focus">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Focus</h2>
+            <p class="section-sub">The type of work I’m best at right now.</p>
+          </div>
+        </div>
+
+        <div class="focus-grid">
+          <div class="focus-card">
+            <h3>Responsive polish</h3>
+            <p>Layouts that don’t collapse or overflow when the screen gets tight.</p>
+          </div>
+          <div class="focus-card">
+            <h3>Interactive UI</h3>
+            <p>Modals, lightboxes, sliders — built to behave correctly on mobile.</p>
+          </div>
+          <div class="focus-card">
+            <h3>Clarity & hierarchy</h3>
+            <p>Spacing, typography, and structure that make content feel effortless.</p>
+          </div>
+          <div class="focus-card">
+            <h3>Client-ready builds</h3>
+            <p>Simple sites that look trustworthy and are easy to update.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="shell">
+        <div class="contact">
+          <div>
+            <h2 class="section-title">Contact</h2>
+            <p class="section-sub">
+              If you want a clean website, a redesign, or help polishing your UI, reach out.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <a class="contact-link" href="mailto:dseabase@gmail.com">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">dseabase@gmail.com</span>
+            </a>
+            <a class="contact-link" href="#" target="_blank" rel="noreferrer">
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value">Add your link</span>
+            </a>
+            <a class="contact-link" href="#" target="_blank" rel="noreferrer">
+              <span class="contact-label">GitHub</span>
+              <span class="contact-value">Add your link</span>
+            </a>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <p>© <span id="year"></span> Drew Seabase • Built with HTML/CSS/JS</p>
+          <a class="backtop" href="#top">Back to top ↑</a>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL (Project detail) -->
+  <div class="modal" id="modal-xc" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Project details">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="document">
+      <button class="modal-close" aria-label="Close modal" data-close>✕</button>
+      <h3 class="modal-title">Spartan Cross Country Website — Details</h3>
+      <p class="modal-sub">
+        Built to stay stable across breakpoints and handle real content without breaking.
+      </p>
+      <div class="modal-grid">
+        <div class="modal-item">
+          <div class="modal-k">Key features</div>
+          <ul>
+            <li>Roster modal with responsive layout</li>
+            <li>Prev/Next slider behavior on small screens</li>
+            <li>Gallery lightbox for race-day photos</li>
+          </ul>
+        </div>
+        <div class="modal-item">
+          <div class="modal-k">What I learned</div>
+          <ul>
+            <li>How to prevent layout overflow on mobile</li>
+            <li>Modal sizing + scroll containment done cleanly</li>
+            <li>Keeping UI consistent across media queries</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <a class="btn primary" href="#" target="_blank" rel="noreferrer">View Live</a>
+        <a class="btn ghost" href="#" target="_blank" rel="noreferrer">View Code</a>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+</html>
