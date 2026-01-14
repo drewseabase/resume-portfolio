@@ -18,7 +18,7 @@ export default function Hero(){
 
         //Parse baseline translate values from SVG attributes
         const base = waves.map((g) =>{
-            const t = g.getattribute("transform") || "translate(0,0)";
+            const t = g.getAttribute("transform") || "translate(0,0)";
             const match = t.match(/translate\(\s*([-\d.]+)\s*,\s*([-\d.]+)\s*\)/);
             return{
                 x: match ? parseFloat(match[1]) : 0,
@@ -106,12 +106,6 @@ export default function Hero(){
                                     d="M0,352.943L45.714,350.075C91.429,347.207,182.857,341.471,274.286,340.581C365.714,339.692,457.143,343.65,548.571,344.095C640,344.54,731.429,341.472,822.857,303.183C914.286,264.894,1005.714,191.383,1097.143,185.175C1188.571,178.967,1280,240.06,1371.429,221.336C1462.857,202.612,1554.286,104.069,1645.714,98.48C1737.143,92.892,1828.571,180.258,1874.286,223.941L1920,267.624"
                                 />
                             </defs>
-
-                            <text fontSize="80" fill="white" fontWeight="bold" letterSpacing="10">
-                                <textPath href="#topWavePath" startOffset="50%" textAnchor="middle">
-                                    Hi all, I'm Drew
-                                </textPath>
-                            </text>
                         </g>
 
                         {/* Middle Wave - Description text inside */}
@@ -121,13 +115,6 @@ export default function Hero(){
                                 fillOpacity="1"
                                 d="M0,136.093L45.714,117.434C91.429,98.774,182.857,61.455,274.286,80.719C365.714,99.983,457.143,175.829,548.571,189.505C640,203.181,731.429,154.687,822.857,130.414C914.286,106.141,1005.714,106.09,1097.143,141.274C1188.571,176.458,1280,246.877,1371.429,284.697C1462.857,322.517,1554.286,327.739,1645.714,284.675C1737.143,241.611,1828.571,150.263,1874.286,104.589L1920,58.914L1920,720L1874.286,720C1828.571,720,1737.143,720,1645.714,720C1554.286,720,1462.857,720,1371.429,720C1280,720,1188.571,720,1097.143,720C1005.714,720,914.286,720,822.857,720C731.429,720,640,720,548.571,720C457.143,720,365.714,720,274.286,720C182.857,720,91.429,720,45.714,720L0,720Z"
                             />
-                            {/* NOTE: I changed x from 500 -> 960 so it centers in a 1920-wide viewBox */}
-                            <text x="960" y="350" fontSize="40" fill="rgba(255,255,255,0.9)" fontWeight="400" textAnchor="middle" letterSpacing="2">
-                                I am a Front-End Developer who is passionate
-                            </text>
-                            <text x="960" y="410" fontSize="40" fill="rgba(255,255,255,0.9)" fontWeight="400" textAnchor="middle" letterSpacing="2">
-                                creating responsive, animated web interfaces
-                            </text>
                         </g>
 
                         {/* Bottom Wave (Black) */}
@@ -140,6 +127,32 @@ export default function Hero(){
                         </g>
                     </g>
                 </svg>
+            </div>
+
+            <div className="content-hero">
+                <div className="hero-content">
+                {/* Glass Card */}
+                    <div className="hero-card">
+                        <h1 className="hero-name">Drew Seabase</h1>
+
+                        <p className="hero-role">
+                            Front-End Developer building smooth, accessible, animated interfaces.
+                        </p>
+
+                        <p className="hero-tech">
+                            React • JavaScript • CSS • SVG Motion • Performance
+                        </p>
+
+                        <div className="cta-buttons">
+                            <a href="#projects" className="btn btn-primary">
+                                View Projects
+                            </a>
+                            <a href="#contact" className="btn btn-secondary">
+                                Contact
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     );
