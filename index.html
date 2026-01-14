@@ -3,377 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drew Seabase Portfolio</title>
+    <title>Drew Seabase | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header" id="top">
-    <div class="shell">
-      <div class="topbar">
-        <a class="brand" href="#top" aria-label="Home">
-          <span class="brand-dot" aria-hidden="true"></span>
-          <span class="brand-name">Drew Seabase</span>
-        </a>
-
-        <nav class="nav" aria-label="Primary">
-          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">
-            <span class="nav-toggle-lines" aria-hidden="true"></span>
-            <span class="sr-only">Menu</span>
-          </button>
-          <ul id="nav-links" class="nav-links">
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#focus">Focus</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+    <script src="homepage.js" defer></script>
+   <header class="top-bar">
+    <!--<div class="topbar-inner">
+        <a class="brand" href="#">
+            <span class="brand-name">Drew Seabase</span>
+            <span class="brand-role">Web Developer</span>
+        <nav class="topbar-nav" aria-label="Social Links">
+            <a class="nav-link" href="https://github.com/drewseabase"><i class="fa-brands fa-github"></i></a>
+            <a class="nav-link" href="https://www.linkedin.com/in/drew-seabase-a86a33392/"><i class="fa-brands fa-linkedin"></i></a>
+            <a class="nav-link" href="https://www.instagram.com/d.n.s.24/"><i class="fa-brands fa-instagram"></i></a>
         </nav>
-      </div>
+    </div>-->
+   </header>
+<main>
+   <div class="wave-section">
+        <div class="wave-container" id="waveContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+                <g id="waveGroup">
+                    <rect width="1920" height="1080" fill="rgb(169, 219, 184)"></rect>
+                        <!-- First Wave (Top) - Name and Title -->
+                        <g transform="translate(0, 0)">
+                            <path fill="rgb(115, 148, 124)" fill-opacity="1" d="M0,352.943L45.714,350.075C91.429,347.207,182.857,341.471,274.286,340.581C365.714,339.692,457.143,343.65,548.571,344.095C640,344.54,731.429,341.472,822.857,303.183C914.286,264.894,1005.714,191.383,1097.143,185.175C1188.571,178.967,1280,240.06,1371.429,221.336C1462.857,202.612,1554.286,104.069,1645.714,98.48C1737.143,92.892,1828.571,180.258,1874.286,223.941L1920,267.624L1920,1080L1874.286,1080C1828.571,1080,1737.143,1080,1645.714,1080C1554.286,1080,1462.857,1080,1371.429,1080C1280,1080,1188.571,1080,1097.143,1080C1005.714,1080,914.286,1080,822.857,1080C731.429,1080,640,1080,548.571,1080C457.143,1080,365.714,1080,274.286,1080C182.857,1080,91.429,1080,45.714,1080L0,1080Z"></path>
+                        <defs>
+                            <path id="topWavePath" d="M0,352.943L45.714,350.075C91.429,347.207,182.857,341.471,274.286,340.581C365.714,339.692,457.143,343.65,548.571,344.095C640,344.54,731.429,341.472,822.857,303.183C914.286,264.894,1005.714,191.383,1097.143,185.175C1188.571,178.967,1280,240.06,1371.429,221.336C1462.857,202.612,1554.286,104.069,1645.714,98.48C1737.143,92.892,1828.571,180.258,1874.286,223.941L1920,267.624" />
+                        </defs>
+                        <text font-size="70" fill="white" font-weight="bold" letter-spacing="8">
+                            <textPath href="#topWavePath" startOffset="50%" text-anchor="middle">
+                                Drew Seabase • Web Developer
+                            </textPath>
+                        </text>
+                    </g>
+                        <!-- Middle Wave - Social Icons -->
+                    <g transform="translate(0, 360)">
+                            <path fill="rgb(62, 77, 65)" fill-opacity="1" d="M0,136.093L45.714,117.434C91.429,98.774,182.857,61.455,274.286,80.719C365.714,99.983,457.143,175.829,548.571,189.505C640,203.181,731.429,154.687,822.857,130.414C914.286,106.141,1005.714,106.09,1097.143,141.274C1188.571,176.458,1280,246.877,1371.429,284.697C1462.857,322.517,1554.286,327.739,1645.714,284.675C1737.143,241.611,1828.571,150.263,1874.286,104.589L1920,58.914L1920,720L1874.286,720C1828.571,720,1737.143,720,1645.714,720C1554.286,720,1462.857,720,1371.429,720C1280,720,1188.571,720,1097.143,720C1005.714,720,914.286,720,822.857,720C731.429,720,640,720,548.571,720C457.143,720,365.714,720,274.286,720C182.857,720,91.429,720,45.714,720L0,720Z"></path>
+                        <defs>
+                            <path id="middleWavePath" d="M0,136.093L45.714,117.434C91.429,98.774,182.857,61.455,274.286,80.719C365.714,99.983,457.143,175.829,548.571,189.505C640,203.181,731.429,154.687,822.857,130.414C914.286,106.141,1005.714,106.09,1097.143,141.274C1188.571,176.458,1280,246.877,1371.429,284.697C1462.857,322.517,1554.286,327.739,1645.714,284.675C1737.143,241.611,1828.571,150.263,1874.286,104.589L1920,58.914" />
+                        </defs>
+                    </g>
+                    <!-- Bottom Wave (Black) -->
+                    <g transform="translate(0, 720)">
+                        <path fill="rgb(0, 0, 0)" fill-opacity="1" d="M0,107.121L45.714,134.307C91.429,161.493,182.857,215.866,274.286,254.33C365.714,292.794,457.143,315.35,548.571,300.514C640,285.679,731.429,233.452,822.857,180.313C914.286,127.174,1005.714,73.123,1097.143,43.365C1188.571,13.606,1280,8.141,1371.429,41.079C1462.857,74.017,1554.286,145.358,1645.714,167.782C1737.143,190.206,1828.571,163.713,1874.286,150.467L1920,137.221L1920,360L1874.286,360C1828.571,360,1737.143,360,1645.714,360C1554.286,360,1462.857,360,1371.429,360C1280,360,1188.571,360,1097.143,360C1005.714,360,914.286,360,822.857,360C731.429,360,640,360,548.571,360C457.143,360,365.714,360,274.286,360C182.857,360,91.429,360,45.714,360L0,360Z"></path>
+                    </g>
+                </g>
+            </svg>
+        </div>
+   </div>
+   <div class="black-section">
+    <div class="content">
+        <h2>About Me</h2>
     </div>
-  </header>
-
-  <main id="main">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="shell">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="kicker">Front-end developer • HTML / CSS / JavaScript</p>
-            <h1 class="hero-title">
-              I build <span class="accent">clean, responsive</span> websites
-              with thoughtful UI and real usability.
-            </h1>
-            <p class="hero-sub">
-              I’m entry-level, but I treat my work like it’s shipping to real users:
-              clear layout, mobile-first structure, and interactive details that feel polished.
-            </p>
-
-            <div class="hero-cta">
-              <a class="btn primary" href="#projects">View Projects</a>
-              <a class="btn ghost" href="#contact">Contact</a>
-            </div>
-
-            <div class="hero-meta">
-              <div class="meta-pill">
-                <span class="meta-label">Based in</span>
-                <span class="meta-value">Michigan</span>
-              </div>
-              <div class="meta-pill">
-                <span class="meta-label">Strength</span>
-                <span class="meta-value">Responsive UI + interaction</span>
-              </div>
-              <div class="meta-pill">
-                <span class="meta-label">Currently</span>
-                <span class="meta-value">Building client-ready sites</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Hero card (unique but minimal) -->
-          <div class="hero-card" role="region" aria-label="Highlights">
-            <div class="hero-card-inner">
-              <div class="stat">
-                <div class="stat-num" data-count="3">0</div>
-                <div class="stat-label">Projects shipped</div>
-              </div>
-              <div class="stat">
-                <div class="stat-num" data-count="1">0</div>
-                <div class="stat-label">Content-heavy site built</div>
-              </div>
-              <div class="stat">
-                <div class="stat-num" data-count="100">0</div>
-                <div class="stat-label">Mobile-first mindset</div>
-              </div>
-
-              <div class="divider"></div>
-
-              <div class="mini-list">
-                <h2 class="mini-title">What you’ll notice</h2>
-                <ul>
-                  <li>Layouts that stay stable across breakpoints</li>
-                  <li>Modals / sliders that don’t break on small screens</li>
-                  <li>Clean spacing, clear hierarchy, readable type</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-bottom">
-          <p class="hero-bottom-text">Scroll for selected work ↓</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-      <div class="shell">
-        <div class="section-head">
-          <div>
-            <h2 class="section-title">Selected Projects</h2>
-            <p class="section-sub">
-              Short case studies — what I built, why it matters, and how it works.
-            </p>
-          </div>
-          <div class="filter">
-            <button class="chip active" data-filter="all">All</button>
-            <button class="chip" data-filter="ui">UI</button>
-            <button class="chip" data-filter="js">JavaScript</button>
-            <button class="chip" data-filter="responsive">Responsive</button>
-          </div>
-        </div>
-
-        <div class="cards" id="projectGrid">
-          <!-- Project 1 -->
-          <article class="card" data-tags="ui js responsive">
-            <div class="card-top">
-              <div class="badge">Case Study</div>
-              <div class="card-actions">
-                <a class="icon-btn" href="#" aria-label="Open live demo (replace link)">Live</a>
-                <a class="icon-btn" href="#" aria-label="Open GitHub repo (replace link)">Code</a>
-              </div>
-            </div>
-
-            <h3 class="card-title">Spartan Cross Country Website</h3>
-            <p class="card-desc">
-              A content-heavy athletics site with interactive roster profiles, modals,
-              and a clean mobile layout that stays usable on small screens.
-            </p>
-
-            <div class="card-grid">
-              <div class="card-block">
-                <div class="card-label">Problem</div>
-                <div class="card-text">Lots of content + lots of breakpoints → easy to break the UI.</div>
-              </div>
-              <div class="card-block">
-                <div class="card-label">Build</div>
-                <div class="card-text">Responsive layout + modals + sliders + lightbox gallery.</div>
-              </div>
-              <div class="card-block">
-                <div class="card-label">Result</div>
-                <div class="card-text">Stable across devices, readable hierarchy, smooth interactions.</div>
-              </div>
-            </div>
-
-            <div class="stack">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS Grid/Flex</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">Responsive</span>
-            </div>
-
-            <button class="card-expand" data-modal="modal-xc">View details</button>
-          </article>
-
-          <!-- Project 2 (use a real second project later; for now it’s a slot) -->
-          <article class="card muted" data-tags="ui responsive">
-            <div class="card-top">
-              <div class="badge">Next Build</div>
-              <div class="card-actions">
-                <span class="ghost-pill">In progress</span>
-              </div>
-            </div>
-
-            <h3 class="card-title">Small Business Redesign (Coming Next)</h3>
-            <p class="card-desc">
-              A simple, client-ready 3–5 page website focused on clarity, speed,
-              and making the business look more trustworthy.
-            </p>
-
-            <div class="card-grid">
-              <div class="card-block">
-                <div class="card-label">Goal</div>
-                <div class="card-text">Modern layout, better spacing, better CTA, better mobile.</div>
-              </div>
-              <div class="card-block">
-                <div class="card-label">Deliverable</div>
-                <div class="card-text">Home / About / Services / Contact + basic SEO structure.</div>
-              </div>
-              <div class="card-block">
-                <div class="card-label">Timeline</div>
-                <div class="card-text">A fast build that’s realistic for freelance work.</div>
-              </div>
-            </div>
-
-            <div class="stack">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">Mobile-first</span>
-            </div>
-          </article>
-
-          <!-- Project 3 -->
-          <article class="card" data-tags="js ui">
-            <div class="card-top">
-              <div class="badge">Feature</div>
-              <div class="card-actions">
-                <a class="icon-btn" href="#" aria-label="Open demo (replace link)">Live</a>
-                <a class="icon-btn" href="#" aria-label="Open repo (replace link)">Code</a>
-              </div>
-            </div>
-
-            <h3 class="card-title">Interactive UI Components</h3>
-            <p class="card-desc">
-              A collection of reusable UI patterns: modal, lightbox, slider,
-              and responsive card layouts designed to be dependable.
-            </p>
-
-            <div class="card-grid">
-              <div class="card-block">
-                <div class="card-label">Focus</div>
-                <div class="card-text">Keyboard support, click-outside close, escape to exit.</div>
-              </div>
-              <div class="card-block">
-                <div class="card-label">Details</div>
-                <div class="card-text">No layout shift, consistent spacing, responsive behavior.</div>
-              </div>
-              <div class="card-block">
-                <div class="card-label">Why</div>
-                <div class="card-text">These are the things that separate “works” from “polished.”</div>
-              </div>
-            </div>
-
-            <div class="stack">
-              <span class="tag">JavaScript</span>
-              <span class="tag">UI</span>
-              <span class="tag">Accessibility</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="shell">
-        <div class="two-col">
-          <div>
-            <h2 class="section-title">About</h2>
-            <p class="prose">
-              I’m an entry-level front-end developer focused on building clean, responsive,
-              user-first websites. I like work that rewards attention to detail:
-              spacing, hierarchy, interaction, and making sure things hold up on smaller screens.
-            </p>
-            <p class="prose">
-              My best work is when I take something content-heavy and make it feel organized,
-              modern, and easy to use — without overcomplicating the tech.
-            </p>
-          </div>
-
-          <div class="panel">
-            <h3 class="panel-title">What I’m strong at (no fluff)</h3>
-            <ul class="panel-list">
-              <li><span>Responsive layout</span><span>Grid/Flex, breakpoints, mobile-first</span></li>
-              <li><span>UI structure</span><span>clean spacing, consistent components</span></li>
-              <li><span>JavaScript interaction</span><span>modals, sliders, lightboxes</span></li>
-              <li><span>Debugging</span><span>fixing edge cases + weird responsive issues</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOCUS -->
-    <section class="section" id="focus">
-      <div class="shell">
-        <div class="section-head">
-          <div>
-            <h2 class="section-title">Focus</h2>
-            <p class="section-sub">The type of work I’m best at right now.</p>
-          </div>
-        </div>
-
-        <div class="focus-grid">
-          <div class="focus-card">
-            <h3>Responsive polish</h3>
-            <p>Layouts that don’t collapse or overflow when the screen gets tight.</p>
-          </div>
-          <div class="focus-card">
-            <h3>Interactive UI</h3>
-            <p>Modals, lightboxes, sliders — built to behave correctly on mobile.</p>
-          </div>
-          <div class="focus-card">
-            <h3>Clarity & hierarchy</h3>
-            <p>Spacing, typography, and structure that make content feel effortless.</p>
-          </div>
-          <div class="focus-card">
-            <h3>Client-ready builds</h3>
-            <p>Simple sites that look trustworthy and are easy to update.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <div class="shell">
-        <div class="contact">
-          <div>
-            <h2 class="section-title">Contact</h2>
-            <p class="section-sub">
-              If you want a clean website, a redesign, or help polishing your UI, reach out.
-            </p>
-          </div>
-
-          <div class="contact-card">
-            <a class="contact-link" href="mailto:dseabase@gmail.com">
-              <span class="contact-label">Email</span>
-              <span class="contact-value">dseabase@gmail.com</span>
-            </a>
-            <a class="contact-link" href="#" target="_blank" rel="noreferrer">
-              <span class="contact-label">LinkedIn</span>
-              <span class="contact-value">Add your link</span>
-            </a>
-            <a class="contact-link" href="#" target="_blank" rel="noreferrer">
-              <span class="contact-label">GitHub</span>
-              <span class="contact-value">Add your link</span>
-            </a>
-          </div>
-        </div>
-
-        <footer class="footer">
-          <p>© <span id="year"></span> Drew Seabase • Built with HTML/CSS/JS</p>
-          <a class="backtop" href="#top">Back to top ↑</a>
-        </footer>
-      </div>
-    </section>
-  </main>
-
-  <!-- MODAL (Project detail) -->
-  <div class="modal" id="modal-xc" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Project details">
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-card" role="document">
-      <button class="modal-close" aria-label="Close modal" data-close>✕</button>
-      <h3 class="modal-title">Spartan Cross Country Website — Details</h3>
-      <p class="modal-sub">
-        Built to stay stable across breakpoints and handle real content without breaking.
-      </p>
-      <div class="modal-grid">
-        <div class="modal-item">
-          <div class="modal-k">Key features</div>
-          <ul>
-            <li>Roster modal with responsive layout</li>
-            <li>Prev/Next slider behavior on small screens</li>
-            <li>Gallery lightbox for race-day photos</li>
-          </ul>
-        </div>
-        <div class="modal-item">
-          <div class="modal-k">What I learned</div>
-          <ul>
-            <li>How to prevent layout overflow on mobile</li>
-            <li>Modal sizing + scroll containment done cleanly</li>
-            <li>Keeping UI consistent across media queries</li>
-          </ul>
-        </div>
-      </div>
-      <div class="modal-actions">
-        <a class="btn primary" href="#" target="_blank" rel="noreferrer">View Live</a>
-        <a class="btn ghost" href="#" target="_blank" rel="noreferrer">View Code</a>
-      </div>
-    </div>
-  </div>
-  <script src="script.js"></script>
+   </div>
+</main>
 </body>
-</html>
 </html>

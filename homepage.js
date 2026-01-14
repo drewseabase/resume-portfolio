@@ -1,119 +1,86 @@
-// script.js
-document.addEventListener("DOMContentLoaded", () => {
-  // Footer year
-  const y = document.getElementById("year");
-  if (y) y.textContent = new Date().getFullYear();
+const waveContainer = document.getElementById("waveContainer");
+const waveGroup = document.getElementById("waveGroup");
+const waves = Array.from(waveGroup?.querySelectorAll('g[transform^="translate"]') || []);
 
-  // Mobile nav
-  const toggle = document.querySelector(".nav-toggle");
-  const links = document.querySelector(".nav-links");
-  if (toggle && links) {
-    toggle.addEventListener("click", () => {
-      const isOpen = links.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", String(isOpen));
-    });
+if (!waveContainer || !waveGroup || waves.length < 3) {
+  console.warn("Wave setup: elements not found or not enough layers.");
+} else {
+  const mmReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let reduceMotion = mmReduce.matches;
 
-    // Close menu when clicking a link
-    links.querySelectorAll("a").forEach(a => {
-      a.addEventListener("click", () => {
-        links.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
+  // Keep updated if user toggles it while page is open
+  mmReduce.addEventListener?.("change", (e) => (reduceMotion = e.matches));
 
-  // Filter chips (simple, client-friendly)
-  const chips = Array.from(document.querySelectorAll(".chip"));
-  const cards = Array.from(document.querySelectorAll(".card"));
-  chips.forEach(chip => {
-    chip.addEventListener("click", () => {
-      chips.forEach(c => c.classList.remove("active"));
-      chip.classList.add("active");
-      const filter = chip.dataset.filter;
-
-      cards.forEach(card => {
-        if (filter === "all") {
-          card.hidden = false;
-          return;
-        }
-        const tags = (card.dataset.tags || "").split(" ");
-        card.hidden = !tags.includes(filter);
-      });
-    });
+  // Read baseline translateY for each layer from the attribute
+  const base = waves.map((g) => {
+    const t = g.getAttribute("transform") || "translate(0, 0)";
+    const match = t.match(/translate\(\s*([-\d.]+)\s*,\s*([-\d.]+)\s*\)/);
+    const x = match ? parseFloat(match[1]) : 0;
+    const y = match ? parseFloat(match[2]) : 0;
+    return { x, y };
   });
 
-  // Count-up stats (tiny but makes hero feel custom)
-  const stats = Array.from(document.querySelectorAll("[data-count]"));
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let latestY = 0;
+  let ticking = false;
+  let hidden = false;
 
-  function animateCount(el) {
-    const target = Number(el.dataset.count || "0");
-    if (prefersReduced) { el.textContent = String(target); return; }
-    let current = 0;
-    const steps = 24;
-    const increment = Math.max(1, Math.round(target / steps));
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        el.textContent = String(target);
-        clearInterval(timer);
-      } else {
-        el.textContent = String(current);
-      }
-    }, 30);
-  }
-
-  // Start stats when hero card enters view
-  const heroCard = document.querySelector(".hero-card");
-  if (heroCard && stats.length) {
-    const io = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        stats.forEach(animateCount);
-        io.disconnect();
-      }
-    }, { threshold: 0.35 });
-    io.observe(heroCard);
-  }
-
-  // Modal (click button -> open, click backdrop/close -> close, ESC -> close)
-  const modalTriggers = Array.from(document.querySelectorAll("[data-modal]"));
-  let activeModal = null;
-
-  function openModal(id) {
-    const m = document.getElementById(id);
-    if (!m) return;
-    m.setAttribute("aria-hidden", "false");
-    activeModal = m;
-
-    // Focus close for accessibility
-    const closeBtn = m.querySelector("[data-close]");
-    if (closeBtn) closeBtn.focus();
-
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeModal(m) {
-    if (!m) return;
-    m.setAttribute("aria-hidden", "true");
-    activeModal = null;
-    document.body.style.overflow = "";
-  }
-
-  modalTriggers.forEach(btn => {
-    btn.addEventListener("click", () => openModal(btn.dataset.modal));
-  });
-
-  document.addEventListener("click", (e) => {
-    const t = e.target;
-    if (!(t instanceof Element)) return;
-
-    if (t.matches("[data-close]")) {
-      const m = t.closest(".modal");
-      if (m) closeModal(m);
+  function onScroll() {
+    latestY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
     }
-  });
+  }
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && activeModal) closeModal(activeModal);
-  });
-});
+  function update() {
+    ticking = false;
+
+    const vh = window.innerHeight || 1;
+    const p = Math.min(latestY / vh, 1); // 0..1
+    const fade = Math.max(0, 1 - p * 1.5);
+
+    // Reduced motion: no sliding, just a simple fade-out of colored layers
+    if (reduceMotion) {
+      waves[0].style.opacity = String(fade);
+      waves[1].style.opacity = String(fade);
+      waves[2].style.opacity = "1";
+      return;
+    }
+
+    // Layer 0: slide LEFT
+    waves[0].setAttribute(
+      "transform",
+      `translate(${base[0].x + -p * 2000}, ${base[0].y})`
+    );
+    waves[0].style.opacity = String(fade);
+
+    // Layer 1: slide RIGHT
+    waves[1].setAttribute(
+      "transform",
+      `translate(${base[1].x + p * 2000}, ${base[1].y})`
+    );
+    waves[1].style.opacity = String(fade);
+
+    // Layer 2: rise UP (becomes background)
+    waves[2].setAttribute(
+      "transform",
+      `translate(${base[2].x}, ${base[2].y + -p * 800})`
+    );
+    waves[2].style.opacity = "1";
+
+    // Hide container once past hero (do it once to avoid thrashing)
+    if (p >= 1 && !hidden) {
+      hidden = true;
+      waveContainer.style.opacity = "0";
+      waveContainer.style.pointerEvents = "none";
+    } else if (p < 1 && hidden) {
+      hidden = false;
+      waveContainer.style.opacity = "1";
+      waveContainer.style.pointerEvents = "none";
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  onScroll(); // initial paint
+}
