@@ -32,7 +32,7 @@ export default function TechStack(){
                         <i className="fa-brands fa-html5"></i>
                     </div>
                     <h3>HTML5</h3>
-                    <p>Semantic markup &amp; accessibility</p>
+                    <p>Semantic markup &amp; accesibility</p>
                 </div>
 
                 <div className="tech-item" data-tech="css">
