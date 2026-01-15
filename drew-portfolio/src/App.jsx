@@ -1,4 +1,4 @@
-import Hero from "./components/hero.jsx";
+import Hero from "./components/Hero.jsx";
 import TechStack from "./components/TechStack.jsx";
 import Project from "./components/Projects.jsx";
 export default function App(){
