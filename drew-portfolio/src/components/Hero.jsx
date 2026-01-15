@@ -136,7 +136,7 @@ export default function Hero(){
                         <h1 className="hero-name">Drew Seabase</h1>
 
                         <p className="hero-role">
-                            Front-End Developer building smooth, accessible, animated interfaces.
+                            Front-End Developer building smooth and accessible interfaces.
                         </p>
 
                         <p className="hero-tech">
