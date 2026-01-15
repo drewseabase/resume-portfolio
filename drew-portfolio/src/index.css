@@ -257,11 +257,6 @@ body{
   opacity: 1;
 }
 
-.tech-item:hover{
-  border-color: rgba(255,255,255,.22);
-  background: rgba(255,255,255,.06);
-}
-
 .tech-icon{
   font-size: 3rem;
   opacity: 1;
