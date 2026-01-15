@@ -636,6 +636,47 @@ body{
   }
 }
 
+/* Mobile/Tablet - Remove card hover, enable link hover */
+@media (max-width: 768px) {
+  /* Disable contact card hover effects */
+  .contact-item:hover{
+    transform: none;
+    background: rgba(255,255,255,0.02);
+    box-shadow: 0 0 35px rgba(80, 255, 190, 0.35);
+  }
+  
+  .contact-item:hover .contact-icon,
+  .contact-item:hover h4,
+  .contact-item:hover a{
+    color: rgba(60, 220, 160, 0.75);
+  }
+  
+  /* Enable link-specific hover/active states */
+  .contact-item a{
+    padding: clamp(8px, 2vw, 12px);
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  .contact-item a:hover,
+  .contact-item a:active,
+  .contact-item a:focus{
+    background: rgba(60, 220, 160, 0.2);
+    color: #eafff4;
+    text-decoration: underline;
+    transform: scale(1.02);
+  }
+  
+  /* Make links more tappable */
+  .contact-item a{
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce){
   .arrow{ animation: none; }
