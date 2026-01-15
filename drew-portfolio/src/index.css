@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@300;400;600&display=swap');
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
 body{
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+  font-family: 'Goldman', sans-serif;
   background:
     radial-gradient(circle at center, rgba(120, 90, 200, 0.35), transparent 55%),
     linear-gradient(180deg, #0b0614 0%, #0e0a1d 60%, #070510 100%);
@@ -240,6 +241,8 @@ body{
   transform: translateY(18px);
   opacity: 0;
   transition: transform .55s ease, opacity .55s ease, border-color .2s ease, background-color .2s ease;
+  border-color: rgba(80, 255, 190, 0.95);
+  box-shadow: 0 0 18px rgba(80, 255, 190, 0.35);
 }
 
 .tech-item.animate-in{
