@@ -144,7 +144,7 @@ export default function Hero(){
                         </p>
 
                         <div className="cta-buttons">
-                            <a href="#projects" className="btn btn-primary">
+                            <a href="#project" className="btn btn-primary">
                                 View Projects
                             </a>
                             <a href="#contact" className="btn btn-secondary">
