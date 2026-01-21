@@ -1,4 +1,5 @@
 import {useEffect, useRef} from "react";
+import profilePicture from "../assets/me-hero-256.jpg";
 
 export default function Hero(){
     const waveContainerRef = useRef(null);
@@ -133,8 +134,12 @@ export default function Hero(){
                 <div className="hero-content">
                 {/* Glass Card */}
                     <div className="hero-card">
-                        <h1 className="hero-name">Drew Seabase</h1>
-
+                        <div className="hero-header">
+                            <h1 className="hero-name">Drew Seabase</h1>
+                            <div className="hero-avatar-wrap">
+                                <img src={profilePicture} alt="My Profile Picture" className="hero-avatar"></img>
+                            </div>
+                        </div>
                         <p className="hero-role">
                             Front-End Developer building smooth and accessible interfaces.
                         </p>
