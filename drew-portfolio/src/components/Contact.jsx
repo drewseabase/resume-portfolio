@@ -23,24 +23,26 @@ export default function Contact() {
     items.forEach((item) => observer.observe(item));
     return () => observer.disconnect();
   }, []);
-  
-  function encode(data){
-    return new URLSearchParams(data).toString();
-  }
 
   function handleSubmit(e) {
     e.preventDefault();
 
     const form = e.target;
-    const data = new FormData(form);
+    const formData = new FormData(form);
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode(formData),
+      body: new URLSearchParams(formData).toString(),
     })
-      .then(() => setSubmitted(true))
-      .catch(() => alert("Submission failed. Please try again."));
+      .then(() => {
+        setSubmitted(true);
+        form.reset();
+      })
+      .catch((err) => {
+        console.error(err);
+        alert("Submission failed. Please try again.");
+      });
   }
 
   return (
@@ -58,7 +60,9 @@ export default function Contact() {
             </div>
             <div className="contact-text">
               <h4>Email</h4>
-              <a href="mailto:drewseabase@gmail.com">drewseabase@gmail.com</a>
+              <a href="mailto:drewseabase@gmail.com">
+                drewseabase@gmail.com
+              </a>
             </div>
           </div>
 
@@ -68,7 +72,11 @@ export default function Contact() {
             </div>
             <div className="contact-text">
               <h4>GitHub</h4>
-              <a href="https://github.com/drewseabase" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/drewseabase"
+                target="_blank"
+                rel="noreferrer"
+              >
                 github.com/drewseabase
               </a>
             </div>
@@ -108,7 +116,7 @@ export default function Contact() {
             {/* Netlify required hidden input */}
             <input type="hidden" name="form-name" value="contact" />
 
-            {/* Honeypot field */}
+            {/* Honeypot */}
             <p style={{ display: "none" }}>
               <label>
                 Don’t fill this out: <input name="bot-field" />
@@ -116,11 +124,21 @@ export default function Contact() {
             </p>
 
             <div className="form-group">
-              <input type="text" name="name" placeholder="Your Name" required />
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+              />
             </div>
 
             <div className="form-group">
-              <input type="email" name="email" placeholder="Your Email" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
             </div>
 
             <div className="form-group">
@@ -141,4 +159,5 @@ export default function Contact() {
     </section>
   );
 }
+
 
