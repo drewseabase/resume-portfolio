@@ -23,6 +23,10 @@ export default function Contact() {
     items.forEach((item) => observer.observe(item));
     return () => observer.disconnect();
   }, []);
+  
+  function encode(data){
+    return new URLSearchParams(data).toString();
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -32,7 +36,8 @@ export default function Contact() {
 
     fetch("/", {
       method: "POST",
-      body: data,
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode(formData),
     })
       .then(() => setSubmitted(true))
       .catch(() => alert("Submission failed. Please try again."));
