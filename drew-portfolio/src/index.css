@@ -398,6 +398,9 @@ body{
   font-weight: 800;
   font-size: clamp(0.95rem, 2.5vw, 1.1rem);
 }
+.about-me p + p{
+  margin-top: 16px;
+}
 
 /* --- TECH STACK --- */
 .tech-stack-section{
